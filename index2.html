@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Matematický příklad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #00AF3F;
+        }
+        #logo {
+            width: 200px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            margin-right: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+        h1{
+        font-size: 50px
+        }
+        #hint {
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        #sadstory {
+            display: None;
+            width: 30vw;
+            align-items:center;
+            height: auto;
+            margin-bottom: 20px;
+            position: absolute;
+            top: 30vh;
+            left: 20px;
+        }
+            button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #inCorrect {
+            display: None;
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        #unicorn {
+            display: None;
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 20px;
+            }
+    </style>
+</head>
+<h1>Matematická šifra</h1>
+  <body>
+        <img id="logo" src="logo.png">
+        <div class="hint" id="hint">
+            <p>Váš poslední úkol je převést vámi získané části kódu na slovo.</p>
+        </div>
+        <input type="text" id="answer" placeholder="Zadejte odpověď">
+        <button onclick="checkAnswer()">Odeslat</button>
+        <div class="white-box" id="inCorrect">
+            <p>Špatně, zkus to znovu.</p>
+        </div>
+        <img id="sadstory" src="sadstory.jpg">
+        <img id="unicorn" src="unicorn.avif">  
+        
+        
+        <script>
+        function checkAnswer() {
+            
+            const userAnswer = document.getElementById("answer").value;
+            const inCorrect = document.getElementById("inCorrect");
+            const correctAnswer = "matematika";
+
+            if (userAnswer === correctAnswer) {
+                sadstory.style.display = "none";
+                unicorn.style.display = "block";
+                inCorrect.style.display = "none";
+            } else {
+                sadstory.style.display = "block";
+                unicorn.style.display = "none";
+                inCorrect.style.display = "block";
+            }
+        }
+        </script>   
+  </body>
+</html>
